@@ -10,7 +10,7 @@ interface TabBarProps {
 const props = withDefaults(defineProps<TabBarProps>(), {
 	tabArr: () => [
 		{
-			btnText: "Заказы",
+			btnText: "Приходы",
 			btnLink: "/",
 		},
 		{

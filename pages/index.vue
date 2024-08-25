@@ -12,17 +12,28 @@ onMounted(() => {
 			console.log(response.data);
 		})
 		.catch((error) => {
-			// Обработайте ошибку
 			console.error("Error fetching data:");
 		});
 });
+const handleDeleteOrder = (id: number) => {
+	console.log("Deleted order ID:", id);
+	axios
+		.delete(`https://66c8aee08a477f50dc2ef867.mockapi.io/dzencode/orders/${id}`)
+		.then((response) => {
+			console.log(response.data);
+			orders.value = orders.value.filter((order: any) => order.id !== id);
+		})
+		.catch((error) => {
+			console.error("Error fetching data:");
+		});
+};
 </script>
 
 <template>
 	<div class="wrap_orders">
 		<div class="wrap_add_counts">
 			<button class="wrap_add_counts__button">+</button>
-			<p class="wrap_add_counts__count">Заказы / {{ ordersCount }}</p>
+			<p class="wrap_add_counts__count">Приходы / {{ ordersCount }}</p>
 		</div>
 		<ul class="list_orders">
 			<GroupOrder
@@ -32,6 +43,7 @@ onMounted(() => {
 				:date="item.date"
 				:price="item.price"
 				:id="item.id"
+				@delete-order="handleDeleteOrder"
 			></GroupOrder>
 		</ul>
 	</div>
@@ -56,6 +68,20 @@ onMounted(() => {
 	align-items: flex-start;
 	gap: 1rem;
 	flex-direction: column;
+	max-height: 50rem;
+	overflow-x: auto;
+}
+.list_orders::-webkit-scrollbar {
+	width: 0.7rem;
+}
+.list_orders::-webkit-scrollbar-track {
+	width: 0.7rem;
+}
+.list_orders::-webkit-scrollbar-thumb {
+	width: 0.7rem;
+	border-radius: 0.35rem;
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	background: var(--Stroke-medium-grey-stroke, #d5d6de);
 }
 .wrap_add_counts {
 	display: flex;

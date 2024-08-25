@@ -93,11 +93,6 @@ body::-webkit-scrollbar-thumb {
   border: 1px solid rgba(255, 255, 255, 0.15);
   background:#d5d6de;
 }
-.container_wrap {
-  max-width: 81rem;
-  width: 100%;
-  margin: 0 auto;
-}
 h1,
 h2,
 h3,
@@ -116,4 +111,13 @@ h1 {
 
 h3 {
   font-size: 1.8rem;
+}
+.title_page {
+  font-size: 3rem;
+  font-family: Inter;
+  font-weight: 600;
+  color: #212121;
+  width: 100%;
+  text-align: center;
+  padding: 10rem;
 }
