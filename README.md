@@ -1,75 +1,65 @@
-# Nuxt 3 Minimal Starter
+Описание
+Это веб-приложение, созданное с использованием Nuxt 3. Nuxt — это фреймворк на основе Vue.js, который упрощает создание серверных и статических приложений. Проект разработан для компании dZENcode в рамках технического задания (ТЗ). Приложение позволяет управлять заказами, а также редактировать, просматривать, удалять и сортировать продукты по типу.
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Приложение написано с использованием TypeScript для типизации данных, чтобы избежать проблем с разработкой, обнаруживать ошибки на этапе разработки, улучшать автодополнение в редакторах кода и делать код более предсказуемым и надежным.
 
-## Setup
+Бекенд
+Backend реализован с помощью бесплатного онлайн сервиса "mockapi", который предоставляет возможность создания мини-сервера для работы с данными.
+Documentation mockapi.io - https://github.com/mockapi-io/docs/wiki
 
-Make sure to install the dependencies:
+Установка и запуск
+Требования
+Node.js версии 16.x или выше
+NPM версии 7.x или выше
+Установка зависимостей
+После клонирования репозитория выполните команду для установки зависимостей:
 
-```bash
-# npm
+bash
 npm install
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+Запуск приложения
+Для запуска приложения в режиме разработки используйте команду:
 npm run dev
 
-# pnpm
-pnpm run dev
+После этого откройте в браузере ссылку, которая будет указана в терминале, например: http://localhost:3000.
 
-# yarn
-yarn dev
+Скрипты
+npm run dev — Запуск проекта в режиме разработки.
+npm run build — Сборка приложения для продакшена.
+npm run generate — Генерация статического сайта.
+npm run preview — Просмотр собранного приложения.
+npm run postinstall — Подготовка проекта после установки зависимостей.
 
-# bun
-bun run dev
-```
+Зависимости
+Основные зависимости:
 
-## Production
+axios (^1.7.5):
+Библиотека для выполнения HTTP-запросов, используется для взаимодействия с внешним API mockapi.
 
-Build the application for production:
+nuxt (^3.12.4):
+Фреймворк для создания Vue-приложений с поддержкой серверного рендеринга (SSR) и статической генерации сайтов (SSG),удобной роутинг системой.
 
-```bash
-# npm
-npm run build
+nuxt-icons (^3.2.1):
+Плагин для простого добавления иконок в компоненты вашего проекта.
 
-# pnpm
-pnpm run build
+vue (latest):
+Прогрессивный JavaScript-фреймворк для создания пользовательских интерфейсов.
 
-# yarn
-yarn build
+DevDependencies (Зависимости для разработки)
+sass (^1.77.8):
+Препроцессор CSS, добавляющий переменные, вложенные правила и миксины.
+Основные компоненты
+Компонент GroupOrder: Позволяет изменять, удалять и просматривать дополнительную информацию о приходах через модальное окно.
 
-# bun
-bun run build
-```
+Компонент GroupProduct: Отображает информацию о продукте, включая его тип и другие характеристики.
 
-Locally preview production build:
+Компонент NavBar: Обеспечивает навигацию по страницам веб-приложения.
 
-```bash
-# npm
-npm run preview
+Хостинг
+Приложение задеплоено на Netlify, что позволяет использовать его онлайн - https://dzencode-techquest.netlify.app
 
-# pnpm
-pnpm run preview
+Репозиторий
+GitHub Repository - https://github.com/Str0ng3r/dzencode/tree/main
 
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Спасибо за ваше внимание!
+Если у вас возникли трудности с запуском проекта прошу написать мне в любом мессенджере - +380987520737 (Telegram,Viber,WhatsApp) Макс Станкевич.
