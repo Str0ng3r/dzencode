@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const date = new Date();
+let date = new Date();
 const months = [
 	"JAN",
 	"FEB",
@@ -15,12 +15,29 @@ const months = [
 	"DEC",
 ];
 
-const monthName = months[date.getMonth()];
-const year = date.getFullYear();
-const hours = date.getHours();
-const minutes = date.getMinutes();
-const day = date.getDate();
+const monthName = ref(months[date.getMonth()]);
+const year = ref(date.getFullYear());
+const hours = ref(date.getHours());
+const minutes = ref(date.getMinutes());
+const day = ref(date.getDate());
 console.log(year);
+
+const updateDate = () => {
+	date = new Date();
+	monthName.value = months[date.getMonth()];
+	year.value = date.getFullYear();
+	hours.value = date.getHours();
+	minutes.value = date.getMinutes();
+	day.value = date.getDate();
+};
+
+onMounted(() => {
+	const interval = setInterval(updateDate, 1000); // Обновляем время каждую минуту
+
+	onUnmounted(() => {
+		clearInterval(interval); // Очищаем интервал при размонтировании компонента
+	});
+});
 </script>
 
 <template>
