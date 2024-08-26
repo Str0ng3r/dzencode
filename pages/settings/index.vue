@@ -2,7 +2,7 @@
 
 <template>
 	<div>
-		<h1 class="title_page">Тут настройки</h1>
+		<h1 class="title_page">Страница "настройки" в разработке...</h1>
 	</div>
 </template>
 

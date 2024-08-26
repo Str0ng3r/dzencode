@@ -79,8 +79,6 @@ const toggleSortOrder = () => {
 			<nuxt-icon name="arrow" filled v-if="sortOrder === 'asc'"></nuxt-icon>
 			<nuxt-icon name="arrowd" filled v-else></nuxt-icon>
 		</button>
-		{{ blockCheck }}
-		{{ monitorCheck }}
 		<div class="wrap_checkbox_sort">
 			<div class="wrap_checkbox">
 				<p>Блоки</p>
@@ -145,6 +143,18 @@ const toggleSortOrder = () => {
 	gap: 1rem;
 	max-height: 40rem;
 	overflow-x: auto;
+}
+.list_products::-webkit-scrollbar {
+	width: 0.7rem;
+}
+.list_products::-webkit-scrollbar-track {
+	width: 0.7rem;
+}
+.list_products::-webkit-scrollbar-thumb {
+	width: 0.7rem;
+	border-radius: 0.35rem;
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	background: var(--Stroke-medium-grey-stroke, #d5d6de);
 }
 .sort_button {
 	font-family: Inter;

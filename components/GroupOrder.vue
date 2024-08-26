@@ -68,21 +68,15 @@ const deleteProduct = (id: number) => {
 			console.error("Error updating order:", error);
 		});
 };
+const closeDelModal = () => {
+	isDelete.value = false;
+};
 </script>
 
 <template>
 	<div class="back_modal" v-if="isDelete">
-		<div class="modal_delete">
-			<button
-				class="modal_delete__close_btn"
-				@click="
-					() => {
-						isDelete = false;
-					}
-				"
-			>
-				X
-			</button>
+		<div class="modal_delete" v-click-outside="closeDelModal">
+			<button class="modal_delete__close_btn" @click="closeDelModal">X</button>
 			<h2 class="modal_delete__title">
 				Вы уверены,что хотите удалить этот приход?
 			</h2>
@@ -109,14 +103,7 @@ const deleteProduct = (id: number) => {
 				<h2 class="notify_none_products">Тут нету продуктов!</h2>
 			</div>
 			<div class="wrap_buttons_delete">
-				<button
-					class="wrap_buttons_delete__close"
-					@click="
-						() => {
-							isDelete = false;
-						}
-					"
-				>
+				<button class="wrap_buttons_delete__close" @click="closeDelModal">
 					Отменить
 				</button>
 				<button class="wrap_buttons_delete__del" @click="deleteOrder">
